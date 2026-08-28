@@ -1,115 +1,248 @@
 <!doctype html>
 <html lang="de">
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
 
 <meta
   name="description"
   content="SYNAERIS – eine vollständig geschriebene fünfteilige High-Fantasy-Saga von Daniel Donauer. Band I: Wo Regen verschlingt."
 >
 
-<title>SYNAERIS – Wo Regen verschlingt | Daniel Donauer</title>
+<title>
+  SYNAERIS – Wo Regen verschlingt | Daniel Donauer
+</title>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
 <link
   href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
   rel="stylesheet"
 >
 
+
 <style>
+
+/* =========================================================
+   BASIS
+   ========================================================= */
+
 :root{
+
   --bg:#06131a;
   --bg2:#091c25;
+
   --gold:#d7aa68;
   --gold2:#f0c986;
+
   --text:#e8e3d9;
   --muted:#aaa99f;
+
   --line:rgba(217,167,94,.25);
+
   --shadow:0 25px 80px rgba(0,0,0,.48);
+
 }
+
 
 *{
   box-sizing:border-box;
 }
 
+
 html{
+
+  width:100%;
+  max-width:100%;
+
   scroll-behavior:smooth;
+
+  overflow-x:hidden;
+
 }
+
 
 body{
+
+  width:100%;
+  max-width:100%;
+
   margin:0;
+
   overflow-x:hidden;
+
   color:var(--text);
-  font-family:"EB Garamond",Georgia,serif;
+
+  font-family:
+    "EB Garamond",
+    Georgia,
+    serif;
+
   background:
-    radial-gradient(circle at 20% 10%,rgba(31,93,118,.18),transparent 28%),
-    radial-gradient(circle at 82% 8%,rgba(61,126,154,.09),transparent 32%),
-    linear-gradient(180deg,#051118 0%,#071821 45%,#041016 100%);
+
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(31,93,118,.18),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(61,126,154,.09),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      180deg,
+      #051118 0%,
+      #071821 45%,
+      #041016 100%
+    );
+
 }
+
 
 body::before{
+
   content:"";
+
   position:fixed;
+
   inset:0;
+
   pointer-events:none;
+
   opacity:.24;
+
   background-image:
-    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);
-  background-size:40px 40px;
+
+    linear-gradient(
+      rgba(255,255,255,.015) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.012) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    40px 40px;
+
   z-index:100;
+
 }
+
 
 a{
+
   color:inherit;
+
   text-decoration:none;
+
 }
+
 
 img{
+
   display:block;
+
   max-width:100%;
+
 }
+
 
 .container{
-  width:min(1240px,calc(100% - 64px));
+
+  width:min(
+    1240px,
+    calc(100% - 64px)
+  );
+
   margin:0 auto;
+
 }
+
 
 .eyebrow{
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   color:var(--gold);
+
   letter-spacing:.30em;
+
   text-transform:uppercase;
+
   font-size:.72rem;
+
 }
 
+
 .ornament{
+
   display:flex;
+
   align-items:center;
+
   gap:16px;
+
   color:var(--gold);
+
   opacity:.85;
+
   margin:14px 0 24px;
+
 }
+
 
 .ornament::before,
 .ornament::after{
+
   content:"";
+
   width:62px;
+
   height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold));
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold)
+    );
+
 }
+
 
 .ornament::after{
+
   transform:scaleX(-1);
+
 }
 
+
 .ornament span{
+
   font-size:1.2rem;
+
 }
+
 
 
 /* =========================================================
@@ -117,69 +250,141 @@ img{
    ========================================================= */
 
 .nav{
+
   position:fixed;
+
   top:0;
   left:0;
   right:0;
+
   z-index:50;
+
   backdrop-filter:blur(16px);
-  background:linear-gradient(
-    180deg,
-    rgba(3,12,17,.94),
-    rgba(3,12,17,.72)
-  );
-  border-bottom:1px solid rgba(215,170,104,.14);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3,12,17,.94),
+      rgba(3,12,17,.72)
+    );
+
+  border-bottom:
+    1px solid
+    rgba(215,170,104,.14);
+
 }
+
+
+.nav .container{
+
+  width:min(
+    1240px,
+    calc(100% - 48px)
+  );
+
+}
+
 
 .nav-inner{
+
   min-height:80px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:30px;
+
 }
+
 
 .brand{
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:1.3rem;
+
   letter-spacing:.2em;
+
   color:var(--gold2);
+
 }
+
 
 .brand small{
+
   display:block;
-  font-family:"EB Garamond",serif;
-  color:#c5bda9;
-  text-align:center;
-  letter-spacing:.24em;
-  font-size:.72rem;
+
   margin-top:3px;
+
+  text-align:center;
+
+  font-family:
+    "EB Garamond",
+    serif;
+
+  color:#c5bda9;
+
+  letter-spacing:.24em;
+
+  font-size:.72rem;
+
 }
+
 
 .nav-links{
+
   display:flex;
+
   align-items:center;
+
   gap:30px;
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:.72rem;
+
   letter-spacing:.08em;
+
 }
+
 
 .nav-links a{
+
   color:#d7d1c5;
+
   transition:.25s;
+
 }
+
 
 .nav-links a:hover{
+
   color:var(--gold2);
+
 }
 
+
 .nav-cta{
-  border:1px solid rgba(215,170,104,.55);
-  border-radius:999px;
+
   padding:11px 20px;
+
+  border:
+    1px solid
+    rgba(215,170,104,.55);
+
+  border-radius:999px;
+
   color:var(--gold2)!important;
+
 }
+
 
 
 /* =========================================================
@@ -187,165 +392,390 @@ img{
    ========================================================= */
 
 .hero{
+
   min-height:100vh;
+
   display:flex;
+
   align-items:center;
+
   position:relative;
-  padding:130px 0 80px;
+
+  padding:
+    130px 0
+    80px;
+
   overflow:hidden;
+
 }
 
+
 .hero::before{
+
   content:"";
+
   position:absolute;
+
   width:800px;
   height:800px;
+
   right:-230px;
   top:80px;
+
   border-radius:50%;
+
   background:
     radial-gradient(
       circle,
       rgba(34,148,196,.12),
       transparent 66%
     );
+
   pointer-events:none;
+
 }
 
+
 .hero::after{
+
   content:"";
+
   position:absolute;
+
   left:0;
   right:0;
   bottom:0;
+
   height:160px;
-  background:linear-gradient(transparent,#071821);
+
+  background:
+    linear-gradient(
+      transparent,
+      #071821
+    );
+
   pointer-events:none;
+
 }
+
+
+.hero > .container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin-left:auto;
+  margin-right:auto;
+
+  padding-left:
+    clamp(
+      32px,
+      5vw,
+      78px
+    );
+
+  padding-right:
+    clamp(
+      32px,
+      5vw,
+      78px
+    );
+
+}
+
 
 .hero-grid{
+
   position:relative;
+
   z-index:2;
+
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
-  gap:58px;
-  align-items:center;
+
   width:100%;
+
+  max-width:100%;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(340px,500px);
+
+  gap:
+    clamp(
+      36px,
+      4vw,
+      64px
+    );
+
+  align-items:center;
+
 }
 
-.hero-copy,
-.book-wrap{
-  min-width:0;
-}
 
 .hero-copy{
+
   position:relative;
+
   z-index:3;
-  padding-left:4px;
+
+  width:100%;
+
+  max-width:680px;
+
+  min-width:0;
+
 }
+
+
+.hero-copy > *{
+
+  max-width:100%;
+
+}
+
 
 .hero h1{
-  margin:0;
+
+  width:auto;
+
   max-width:100%;
-  font-family:Cinzel,serif;
-  font-size:clamp(3.8rem,6.2vw,6.6rem);
+
+  margin:0;
+
+  padding:0;
+
+  overflow:visible;
+
+  font-family:
+    Cinzel,
+    serif;
+
+  font-size:
+    clamp(
+      3.6rem,
+      5.7vw,
+      6.4rem
+    );
+
   line-height:.94;
+
   font-weight:500;
+
   letter-spacing:.035em;
+
   color:#e9c48b;
-  text-shadow:0 0 50px rgba(215,170,104,.12);
+
+  text-shadow:
+    0 0 50px
+    rgba(215,170,104,.12);
+
 }
+
 
 .hero h2{
-  margin:24px 0 0;
-  font-family:Cinzel,serif;
-  font-size:clamp(1.25rem,2vw,1.85rem);
+
+  margin:
+    24px 0
+    0;
+
+  font-family:
+    Cinzel,
+    serif;
+
+  font-size:
+    clamp(
+      1.25rem,
+      2vw,
+      1.85rem
+    );
+
   font-weight:400;
+
   letter-spacing:.13em;
+
   line-height:1.45;
+
   color:#e6dfd1;
+
 }
+
 
 .hero p{
+
   max-width:650px;
-  margin:28px 0 0;
+
+  margin:
+    28px 0
+    0;
+
   font-size:1.28rem;
+
   line-height:1.72;
+
   color:#c9c4b8;
+
 }
+
 
 .hero-actions{
+
   display:flex;
+
   flex-wrap:wrap;
+
   gap:14px;
+
   margin-top:34px;
+
 }
+
 
 .btn{
+
   display:inline-flex;
+
   align-items:center;
+
   justify-content:center;
+
   min-height:54px;
-  padding:15px 25px;
+
+  padding:
+    15px 25px;
+
   border-radius:4px;
-  border:1px solid rgba(215,170,104,.5);
-  font-family:Cinzel,serif;
+
+  border:
+    1px solid
+    rgba(215,170,104,.5);
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:.75rem;
+
   letter-spacing:.11em;
+
   text-transform:uppercase;
+
   cursor:pointer;
+
   transition:.28s;
+
 }
+
 
 .btn-primary{
+
   border:none;
+
   color:#071218;
-  background:linear-gradient(135deg,#c49251,#efc77f);
-  box-shadow:0 10px 35px rgba(215,170,104,.18);
+
+  background:
+    linear-gradient(
+      135deg,
+      #c49251,
+      #efc77f
+    );
+
+  box-shadow:
+    0 10px 35px
+    rgba(215,170,104,.18);
+
 }
+
 
 .btn-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 16px 42px rgba(215,170,104,.28);
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 42px
+    rgba(215,170,104,.28);
+
 }
+
 
 .btn-secondary{
-  background:rgba(255,255,255,.015);
+
+  background:
+    rgba(255,255,255,.015);
+
   color:#e4d8c4;
+
 }
+
 
 .btn-secondary:hover{
-  transform:translateY(-3px);
-  background:rgba(215,170,104,.08);
-  border-color:var(--gold);
+
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(215,170,104,.08);
+
+  border-color:
+    var(--gold);
+
 }
+
 
 .series-note{
+
   display:flex;
+
   align-items:center;
+
   gap:16px;
+
   margin-top:42px;
+
   color:#a7b2b5;
+
   font-size:1rem;
+
 }
+
 
 .series-dots{
+
   display:flex;
+
   gap:8px;
+
   flex:0 0 auto;
+
 }
+
 
 .series-dots i{
+
   width:8px;
   height:8px;
+
   border-radius:50%;
-  border:1px solid var(--gold);
+
+  border:
+    1px solid
+    var(--gold);
+
 }
 
+
 .series-dots i:first-child{
-  background:var(--gold);
-  box-shadow:0 0 14px rgba(215,170,104,.5);
+
+  background:
+    var(--gold);
+
+  box-shadow:
+    0 0 14px
+    rgba(215,170,104,.5);
+
 }
+
 
 
 /* =========================================================
@@ -353,23 +783,45 @@ img{
    ========================================================= */
 
 .book-wrap{
+
   position:relative;
+
   width:100%;
+
   max-width:500px;
+
+  min-width:0;
+
   margin-left:auto;
+  margin-right:0;
+
   display:flex;
+
   justify-content:center;
+
   align-items:center;
+
 }
 
+
 .book-glow{
+
   position:absolute;
+
   width:84%;
   height:74%;
+
   left:50%;
   top:50%;
-  transform:translate(-50%,-48%);
+
+  transform:
+    translate(
+      -50%,
+      -48%
+    );
+
   border-radius:50%;
+
   background:
     radial-gradient(
       circle at 50% 45%,
@@ -377,84 +829,179 @@ img{
       rgba(31,108,143,.14) 34%,
       transparent 70%
     );
+
   filter:blur(45px);
+
   pointer-events:none;
+
 }
+
 
 .book-card{
+
   position:relative;
+
   z-index:2;
+
   width:100%;
+
   margin:0;
+
   display:flex;
+
   justify-content:center;
+
   align-items:center;
+
   background:transparent;
+
   border:0;
-  filter:drop-shadow(0 32px 40px rgba(0,0,0,.62));
-  transition:transform .45s ease,filter .45s ease;
+
+  filter:
+    drop-shadow(
+      0 32px 40px
+      rgba(0,0,0,.62)
+    );
+
+  transition:
+    transform .45s ease,
+    filter .45s ease;
+
 }
+
 
 .book-card:hover{
-  transform:translateY(-8px) scale(1.012);
-  filter:drop-shadow(0 42px 50px rgba(0,0,0,.72));
+
+  transform:
+    translateY(-8px)
+    scale(1.012);
+
+  filter:
+    drop-shadow(
+      0 42px 50px
+      rgba(0,0,0,.72)
+    );
+
 }
+
 
 .book-card img{
+
   width:100%;
+
   max-width:500px;
+
   height:auto;
+
   max-height:650px;
+
   object-fit:contain;
+
   object-position:center;
+
 }
 
+
 .book-caption{
+
   position:absolute;
+
   left:50%;
   bottom:10px;
-  transform:translateX(-50%);
+
+  transform:
+    translateX(-50%);
+
   white-space:nowrap;
-  padding:10px 16px;
-  background:rgba(4,15,20,.84);
-  border:1px solid rgba(215,170,104,.28);
-  backdrop-filter:blur(8px);
-  font-family:Cinzel,serif;
+
+  padding:
+    10px 16px;
+
+  background:
+    rgba(4,15,20,.84);
+
+  border:
+    1px solid
+    rgba(215,170,104,.28);
+
+  backdrop-filter:
+    blur(8px);
+
+  font-family:
+    Cinzel,
+    serif;
+
   letter-spacing:.12em;
+
   font-size:.64rem;
+
   color:var(--gold2);
+
 }
+
 
 
 /* =========================================================
-   SECTIONS
+   ALLGEMEINE SEKTIONEN
    ========================================================= */
 
 section{
+
   position:relative;
-  padding:110px 0;
+
+  padding:
+    110px 0;
+
 }
+
 
 .section-head{
+
   max-width:780px;
+
   margin-bottom:58px;
+
 }
+
 
 .section-head h3{
-  margin:10px 0 20px;
-  font-family:Cinzel,serif;
-  font-size:clamp(2.2rem,4vw,4rem);
+
+  margin:
+    10px 0
+    20px;
+
+  font-family:
+    Cinzel,
+    serif;
+
+  font-size:
+    clamp(
+      2.2rem,
+      4vw,
+      4rem
+    );
+
   font-weight:500;
+
   line-height:1.1;
+
   color:#e8d6bb;
+
 }
 
+
 .section-head p{
+
   margin:0;
+
   font-size:1.2rem;
+
   line-height:1.75;
+
   color:#aeb2ad;
+
 }
+
 
 
 /* =========================================================
@@ -462,6 +1009,7 @@ section{
    ========================================================= */
 
 .story{
+
   background:
     linear-gradient(
       180deg,
@@ -469,93 +1017,190 @@ section{
       #081a22 40%,
       #07171e
     );
+
 }
+
 
 .story-grid{
+
   display:grid;
-  grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+
+  grid-template-columns:
+    minmax(0,.95fr)
+    minmax(0,1.05fr);
+
   gap:75px;
+
   align-items:start;
+
 }
 
+
 .quote-card{
+
   position:sticky;
+
   top:120px;
+
   padding:45px;
-  border:1px solid var(--line);
+
+  border:
+    1px solid
+    var(--line);
+
   background:
     linear-gradient(
       145deg,
       rgba(13,40,51,.75),
       rgba(6,20,27,.92)
     );
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 .quote-card::before{
+
   content:"✦";
+
   color:var(--gold);
+
   font-size:2rem;
+
 }
+
 
 .quote-card blockquote{
-  margin:22px 0;
+
+  margin:
+    22px 0;
+
   font-size:1.75rem;
+
   font-style:italic;
+
   line-height:1.5;
+
   color:#ddd3c2;
+
 }
+
 
 .quote-card cite{
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-style:normal;
+
   letter-spacing:.12em;
+
   font-size:.75rem;
+
   color:var(--gold);
+
 }
+
 
 .story-copy p{
-  margin:0 0 25px;
+
+  margin:
+    0 0 25px;
+
   font-size:1.22rem;
+
   line-height:1.85;
+
   color:#c5c3bb;
+
 }
+
 
 .story-copy p:first-child::first-letter{
+
   float:left;
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:4.4rem;
+
   line-height:.78;
-  padding:10px 12px 2px 0;
-  color:var(--gold2);
+
+  padding:
+    10px
+    12px
+    2px
+    0;
+
+  color:
+    var(--gold2);
+
 }
+
 
 .feature-row{
+
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0,1fr)
+    );
+
   gap:14px;
+
   margin-top:40px;
+
 }
+
 
 .feature{
+
   padding:22px;
-  background:rgba(255,255,255,.018);
-  border:1px solid rgba(215,170,104,.16);
+
+  background:
+    rgba(255,255,255,.018);
+
+  border:
+    1px solid
+    rgba(215,170,104,.16);
+
 }
+
 
 .feature strong{
+
   display:block;
+
   margin-bottom:7px;
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:.75rem;
+
   letter-spacing:.08em;
+
   color:#ddc099;
+
 }
 
+
 .feature span{
+
   color:#999f9d;
+
   font-size:.98rem;
+
 }
+
 
 
 /* =========================================================
@@ -563,70 +1208,144 @@ section{
    ========================================================= */
 
 .resonance{
+
   overflow:hidden;
+
 }
+
 
 .resonance::before{
+
   content:"";
+
   position:absolute;
+
   width:720px;
   height:720px;
+
   left:50%;
   top:50%;
-  transform:translate(-50%,-48%);
+
+  transform:
+    translate(
+      -50%,
+      -48%
+    );
+
   border-radius:50%;
-  border:1px solid rgba(73,185,232,.1);
+
+  border:
+    1px solid
+    rgba(73,185,232,.1);
+
   box-shadow:
-    0 0 0 80px rgba(73,185,232,.02),
-    0 0 0 160px rgba(73,185,232,.012);
+
+    0 0 0 80px
+    rgba(73,185,232,.02),
+
+    0 0 0 160px
+    rgba(73,185,232,.012);
+
 }
+
 
 .res-grid{
+
   position:relative;
+
   z-index:2;
+
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0,1fr)
+    );
+
   gap:20px;
+
 }
 
+
 .res-card{
+
   min-height:270px;
+
   padding:35px;
-  border:1px solid rgba(112,186,213,.16);
+
+  border:
+    1px solid
+    rgba(112,186,213,.16);
+
   background:
     linear-gradient(
       160deg,
       rgba(12,40,51,.66),
       rgba(5,18,25,.84)
     );
+
   transition:.3s;
+
 }
+
 
 .res-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(215,170,104,.35);
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(215,170,104,.35);
+
 }
+
 
 .res-card .num{
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:2.7rem;
-  color:rgba(215,170,104,.38);
+
+  color:
+    rgba(215,170,104,.38);
+
 }
+
 
 .res-card h4{
-  margin:38px 0 13px;
-  font-family:Cinzel,serif;
+
+  margin:
+    38px 0
+    13px;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:1.25rem;
+
   font-weight:500;
+
   color:#e1c596;
+
 }
 
+
 .res-card p{
+
   margin:0;
+
   color:#a8afae;
+
   font-size:1.05rem;
+
   line-height:1.65;
+
 }
+
 
 
 /* =========================================================
@@ -634,76 +1353,480 @@ section{
    ========================================================= */
 
 .saga{
+
   background:
     linear-gradient(
       180deg,
       #07171e,
       #06131a
     );
+
 }
+
 
 .timeline{
+
+  position:relative;
+
   display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(
+      5,
+      minmax(0,1fr)
+    );
+
   gap:14px;
+
+  overflow:visible;
+
 }
+
+
+
+/* =========================================================
+   SAGA LICHTPUNKT
+   ========================================================= */
+
+.saga-runner{
+
+  position:absolute;
+
+  top:-7px;
+  left:2%;
+
+  width:13px;
+  height:13px;
+
+  z-index:20;
+
+  pointer-events:none;
+
+  border-radius:50%;
+
+  background:
+    var(--gold2);
+
+  box-shadow:
+
+    0 0 8px
+    rgba(240,201,134,.95),
+
+    0 0 18px
+    rgba(215,170,104,.75),
+
+    0 0 32px
+    rgba(215,170,104,.35);
+
+  animation:
+    sagaJourney
+    10s
+    ease-in-out
+    infinite;
+
+}
+
+
+.saga-runner::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:50%;
+
+  right:50%;
+
+  width:48px;
+  height:2px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(215,170,104,.18),
+      rgba(240,201,134,.75)
+    );
+
+  opacity:.8;
+
+}
+
+
+@keyframes sagaJourney{
+
+
+  0%{
+
+    left:2%;
+
+    opacity:0;
+
+    transform:
+      translateY(0)
+      scale(.8);
+
+  }
+
+
+  4%{
+
+    opacity:1;
+
+  }
+
+
+  8%{
+
+    left:2%;
+
+    transform:
+      translateY(-6px)
+      scale(1.25);
+
+  }
+
+
+  12%{
+
+    left:2%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+
+  24%{
+
+    left:25%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+  28%{
+
+    left:25%;
+
+    transform:
+      translateY(-7px)
+      scale(1.3);
+
+  }
+
+
+  32%{
+
+    left:25%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+
+  44%{
+
+    left:50%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+  48%{
+
+    left:50%;
+
+    transform:
+      translateY(-7px)
+      scale(1.3);
+
+  }
+
+
+  52%{
+
+    left:50%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+
+  64%{
+
+    left:75%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+  68%{
+
+    left:75%;
+
+    transform:
+      translateY(-7px)
+      scale(1.3);
+
+  }
+
+
+  72%{
+
+    left:75%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+
+  84%{
+
+    left:98%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity:1;
+
+  }
+
+
+  89%{
+
+    left:98%;
+
+    transform:
+      translateY(-7px)
+      scale(1.35);
+
+  }
+
+
+  94%{
+
+    left:98%;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+  100%{
+
+    left:98%;
+
+    transform:
+      translateY(0)
+      scale(.7);
+
+    opacity:0;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   EINZELNE BÄNDE
+   ========================================================= */
 
 .volume{
+
   position:relative;
+
   min-height:220px;
-  padding:30px 23px;
-  background:rgba(255,255,255,.012);
-  border-top:1px solid rgba(215,170,104,.24);
+
+  padding:
+    30px 23px;
+
+  background:
+    rgba(255,255,255,.012);
+
+  border-top:
+    1px solid
+    rgba(215,170,104,.24);
+
+  transition:
+
+    background .6s ease,
+
+    border-color .6s ease,
+
+    box-shadow .6s ease,
+
+    transform .6s ease;
+
 }
+
 
 .volume::before{
+
   content:"";
+
   position:absolute;
+
   width:9px;
   height:9px;
+
   top:-5px;
   left:24px;
-  border:1px solid var(--gold);
+
+  border:
+    1px solid
+    var(--gold);
+
   background:#06131a;
-  transform:rotate(45deg);
+
+  transform:
+    rotate(45deg);
+
+  transition:
+    all .45s ease;
+
 }
 
+
 .volume.active{
+
   background:
     linear-gradient(
       180deg,
       rgba(215,170,104,.09),
       rgba(255,255,255,.01)
     );
-  border-top-color:var(--gold);
+
+  border-top-color:
+    var(--gold);
+
 }
+
 
 .volume.active::before{
-  background:var(--gold);
+
+  background:
+    var(--gold);
+
 }
+
+
+/*
+   Band wird während der Animation
+   leicht hervorgehoben.
+*/
+
+.volume.saga-highlight{
+
+  transform:
+    translateY(-3px);
+
+  border-top-color:
+    rgba(240,201,134,.85);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(215,170,104,.10),
+      rgba(255,255,255,.015)
+    );
+
+  box-shadow:
+    0 -12px 28px
+    rgba(215,170,104,.035);
+
+}
+
+
+.volume.saga-highlight::before{
+
+  background:
+    var(--gold2);
+
+  box-shadow:
+    0 0 12px
+    rgba(240,201,134,.75);
+
+}
+
 
 .volume b{
+
   display:block;
+
   margin-bottom:30px;
-  font-family:Cinzel,serif;
-  color:var(--gold2);
+
+  font-family:
+    Cinzel,
+    serif;
+
+  color:
+    var(--gold2);
+
   font-size:.78rem;
+
   letter-spacing:.12em;
+
 }
+
 
 .volume h4{
-  margin:0 0 11px;
-  font-family:Cinzel,serif;
+
+  margin:
+    0 0 11px;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:1.1rem;
+
   font-weight:500;
+
+  line-height:1.45;
+
   color:#d8d2c6;
+
 }
 
+
 .volume p{
+
   margin:0;
+
   color:#8e9999;
+
   line-height:1.5;
+
 }
+
 
 
 /* =========================================================
@@ -711,70 +1834,151 @@ section{
    ========================================================= */
 
 .author-grid{
+
   display:grid;
-  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+
+  grid-template-columns:
+    minmax(0,.8fr)
+    minmax(0,1.2fr);
+
   gap:80px;
+
   align-items:center;
+
 }
+
 
 .author-photo{
+
   position:relative;
+
   aspect-ratio:4/5;
+
   overflow:hidden;
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,#0d2a36,#07141b);
-  box-shadow:var(--shadow);
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d2a36,
+      #07141b
+    );
+
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 .author-photo::after{
+
   content:"";
+
   position:absolute;
+
   inset:12px;
+
   z-index:5;
+
   pointer-events:none;
-  border:1px solid rgba(215,170,104,.18);
+
+  border:
+    1px solid
+    rgba(215,170,104,.18);
+
 }
+
 
 .author-photo img{
+
   position:relative;
+
   z-index:2;
+
   width:100%;
+
   height:100%;
+
   object-fit:cover;
+
 }
+
 
 .author-photo .fallback{
+
   position:absolute;
+
   inset:0;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  padding:30px;
-  color:#7c8c90;
+
   z-index:1;
+
+  display:grid;
+
+  place-items:center;
+
+  text-align:center;
+
+  padding:30px;
+
+  color:#7c8c90;
+
 }
+
 
 .author-photo .fallback strong{
+
   display:block;
-  font-family:Cinzel,serif;
-  font-size:4rem;
-  color:#bc915c;
+
   margin-bottom:12px;
+
+  font-family:
+    Cinzel,
+    serif;
+
+  font-size:4rem;
+
+  color:#bc915c;
+
 }
+
 
 .author-copy h3{
-  margin:8px 0 24px;
-  font-family:Cinzel,serif;
-  font-size:clamp(2.5rem,4vw,4.4rem);
+
+  margin:
+    8px 0
+    24px;
+
+  font-family:
+    Cinzel,
+    serif;
+
+  font-size:
+    clamp(
+      2.5rem,
+      4vw,
+      4.4rem
+    );
+
   font-weight:500;
+
   color:#e3cfaf;
+
 }
 
+
 .author-copy p{
+
   font-size:1.2rem;
+
   line-height:1.85;
+
   color:#b8b9b3;
+
 }
+
 
 
 /* =========================================================
@@ -782,126 +1986,228 @@ section{
    ========================================================= */
 
 .contact{
+
   padding-bottom:140px;
+
 }
 
+
 .contact-shell{
+
   display:grid;
-  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
-  border:1px solid rgba(215,170,104,.24);
+
+  grid-template-columns:
+    minmax(0,.85fr)
+    minmax(0,1.15fr);
+
+  border:
+    1px solid
+    rgba(215,170,104,.24);
+
   background:
     linear-gradient(
       135deg,
       rgba(14,39,49,.82),
       rgba(5,17,23,.96)
     );
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
+
 }
 
+
 .contact-info{
+
   padding:52px;
-  border-right:1px solid rgba(215,170,104,.18);
+
+  border-right:
+    1px solid
+    rgba(215,170,104,.18);
+
   background:
     radial-gradient(
       circle at 15% 10%,
       rgba(51,135,166,.16),
       transparent 38%
     );
+
 }
+
 
 .contact-info h3{
-  margin:8px 0 20px;
-  font-family:Cinzel,serif;
+
+  margin:
+    8px 0
+    20px;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:2.4rem;
+
   font-weight:500;
+
   color:#e3cfaf;
+
 }
+
 
 .contact-info p{
+
   font-size:1.1rem;
+
   line-height:1.75;
+
   color:#aeb2ad;
+
 }
+
 
 .contact-meta{
+
   margin-top:38px;
+
   padding-top:28px;
-  border-top:1px solid rgba(215,170,104,.15);
+
+  border-top:
+    1px solid
+    rgba(215,170,104,.15);
+
   color:#8f9999;
+
   line-height:1.9;
+
 }
 
-.contact-mail{
-  color:#cdb288;
-  transition:.2s;
-}
-
-.contact-mail:hover{
-  color:var(--gold2);
-}
 
 .form{
+
   padding:52px;
+
 }
+
 
 .form-grid{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:18px;
+
 }
+
 
 .field{
+
   display:flex;
+
   flex-direction:column;
+
   gap:9px;
+
 }
+
 
 .field.full{
-  grid-column:1/-1;
+
+  grid-column:
+    1 / -1;
+
 }
 
+
 label{
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   font-size:.7rem;
+
   letter-spacing:.1em;
+
   color:#c9aa7a;
+
 }
+
 
 input,
 textarea,
 select{
+
   width:100%;
-  border:1px solid rgba(215,170,104,.20);
-  background:rgba(2,12,17,.62);
+
+  border:
+    1px solid
+    rgba(215,170,104,.20);
+
+  background:
+    rgba(2,12,17,.62);
+
   color:#e8e3d9;
-  padding:15px 16px;
-  font:1rem "EB Garamond",serif;
+
+  padding:
+    15px 16px;
+
+  font:
+    1rem
+    "EB Garamond",
+    serif;
+
   outline:none;
+
 }
+
 
 input:focus,
 textarea:focus,
 select:focus{
-  border-color:rgba(215,170,104,.65);
-  box-shadow:0 0 0 3px rgba(215,170,104,.07);
+
+  border-color:
+    rgba(215,170,104,.65);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(215,170,104,.07);
+
 }
+
 
 textarea{
+
   min-height:160px;
+
   resize:vertical;
+
 }
+
 
 select option{
+
   background:#06131a;
+
   color:#fff;
+
 }
 
+
 .form-note{
-  grid-column:1/-1;
-  color:#788487;
-  font-size:.9rem;
+
+  grid-column:
+    1 / -1;
+
   margin-top:5px;
+
+  color:#788487;
+
+  font-size:.9rem;
+
 }
+
 
 
 /* =========================================================
@@ -909,327 +2215,453 @@ select option{
    ========================================================= */
 
 footer{
-  padding:32px 0;
-  border-top:1px solid rgba(215,170,104,.12);
+
+  padding:
+    32px 0;
+
+  border-top:
+    1px solid
+    rgba(215,170,104,.12);
+
   color:#7f8b8d;
+
 }
+
 
 .footer-inner{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   gap:25px;
+
   font-size:.93rem;
+
 }
 
+
 .footer-brand{
-  font-family:Cinzel,serif;
+
+  font-family:
+    Cinzel,
+    serif;
+
   color:#b99765;
+
   letter-spacing:.14em;
+
 }
+
 
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
-@media(max-width:1050px){
+@media(max-width:1180px){
+
+  .hero > .container{
+
+    padding-left:40px;
+    padding-right:40px;
+
+  }
+
 
   .hero-grid{
-    grid-template-columns:minmax(0,1fr) minmax(320px,.8fr);
-    gap:36px;
+
+    grid-template-columns:
+      minmax(0,1fr)
+      minmax(310px,420px);
+
+    gap:34px;
+
   }
+
 
   .hero h1{
-    font-size:clamp(3.5rem,6vw,5.6rem);
+
+    font-size:
+      clamp(
+        3.3rem,
+        5.5vw,
+        5.3rem
+      );
+
   }
 
+
   .book-wrap{
-    max-width:430px;
+
+    max-width:420px;
+
   }
+
 }
+
+
 
 @media(max-width:900px){
 
   .nav-links a:not(.nav-cta){
+
     display:none;
+
   }
+
+
+  .hero > .container{
+
+    padding-left:28px;
+    padding-right:28px;
+
+  }
+
 
   .hero-grid,
   .story-grid,
   .author-grid,
   .contact-shell{
+
     grid-template-columns:1fr;
+
   }
+
 
   .hero{
+
     min-height:auto;
+
     padding-top:120px;
+
   }
+
 
   .hero-grid{
+
     gap:46px;
+
   }
+
+
+  .hero-copy{
+
+    max-width:760px;
+
+  }
+
 
   .book-wrap{
-    margin:0 auto;
-    max-width:480px;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    max-width:470px;
+
   }
+
 
   .quote-card{
+
     position:relative;
+
     top:auto;
+
   }
+
 
   .res-grid{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr 1fr;
+
   }
+
 
   .timeline{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr 1fr;
+
   }
 
-  .contact-info{
-    border-right:0;
-    border-bottom:1px solid rgba(215,170,104,.18);
+
+  /*
+     Desktop-Animation auf Tablets und
+     Smartphones aus.
+  */
+
+  .saga-runner{
+
+    display:none;
+
   }
+
+
+  .volume.saga-highlight{
+
+    transform:none;
+
+    box-shadow:none;
+
+  }
+
+
+  .contact-info{
+
+    border-right:0;
+
+    border-bottom:
+      1px solid
+      rgba(215,170,104,.18);
+
+  }
+
 }
+
+
 
 @media(max-width:650px){
 
   .container{
-    width:min(100% - 26px,1240px);
+
+    width:
+      min(
+        100% - 26px,
+        1240px
+      );
+
   }
+
 
   .nav-inner{
+
     min-height:72px;
+
   }
+
 
   .brand{
+
     font-size:1rem;
+
   }
+
 
   .nav-cta{
-    padding:9px 13px;
+
+    padding:
+      9px 13px;
+
   }
+
+
+  .hero > .container{
+
+    padding-left:20px;
+    padding-right:20px;
+
+  }
+
 
   .hero{
-    padding:112px 0 70px;
+
+    padding:
+      112px 0
+      70px;
+
   }
+
 
   .hero h1{
-    font-size:clamp(3rem,15vw,4.5rem);
+
+    font-size:
+      clamp(
+        2.8rem,
+        14vw,
+        4.2rem
+      );
+
+    letter-spacing:.02em;
+
   }
+
 
   .hero h2{
+
     font-size:1.2rem;
-    letter-spacing:.09em;
+
+    letter-spacing:.07em;
+
   }
+
 
   .hero p{
+
     font-size:1.12rem;
+
   }
 
+
   section{
-    padding:82px 0;
+
+    padding:
+      82px 0;
+
   }
+
 
   .feature-row,
   .res-grid,
   .timeline,
   .form-grid{
+
     grid-template-columns:1fr;
+
   }
+
 
   .field.full,
   .form-note{
+
     grid-column:auto;
+
   }
+
 
   .contact-info,
   .form{
-    padding:32px 23px;
+
+    padding:
+      32px 23px;
+
   }
+
 
   .footer-inner{
+
     flex-direction:column;
+
     align-items:flex-start;
+
   }
+
 
   .series-note{
+
     align-items:flex-start;
+
   }
+
 
   .book-wrap{
+
     max-width:390px;
+
   }
 
+
   .book-caption{
-    font-size:.56rem;
+
     bottom:5px;
+
+    font-size:.56rem;
+
   }
+
 }
+
 
 
 /* =========================================================
-   HERO FIX
+   WENIGER ANIMATION BEI SYSTEMEINSTELLUNG
    ========================================================= */
 
-html,
-body{
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden;
-}
+@media(
+  prefers-reduced-motion:reduce
+){
 
-.nav .container{
-  width:min(1240px,calc(100% - 48px));
-  margin-left:auto;
-  margin-right:auto;
-}
+  html{
 
-.hero > .container{
-  width:100%;
-  max-width:1400px;
-  margin-left:auto;
-  margin-right:auto;
-  padding-left:clamp(32px,5vw,78px);
-  padding-right:clamp(32px,5vw,78px);
-}
+    scroll-behavior:auto;
 
-.hero-grid{
-  box-sizing:border-box;
-  width:100%;
-  max-width:100%;
-  margin:0;
-  grid-template-columns:minmax(0,1fr) minmax(340px,500px);
-  gap:clamp(36px,4vw,64px);
-}
-
-.hero-copy{
-  width:100%;
-  max-width:680px;
-  min-width:0;
-  margin:0;
-  padding:0;
-  transform:none;
-}
-
-.hero-copy > *{
-  max-width:100%;
-}
-
-.hero h1{
-  width:auto;
-  max-width:100%;
-  margin-left:0;
-  padding-left:0;
-  font-size:clamp(3.6rem,5.7vw,6.4rem);
-  overflow:visible;
-}
-
-.hero h2,
-.hero p,
-.hero-actions,
-.series-note,
-.eyebrow,
-.ornament{
-  margin-left:0;
-  padding-left:0;
-}
-
-.book-wrap{
-  width:100%;
-  max-width:500px;
-  min-width:0;
-  margin-left:auto;
-  margin-right:0;
-}
-
-@media(max-width:1180px){
-
-  .hero > .container{
-    padding-left:40px;
-    padding-right:40px;
   }
 
-  .hero-grid{
-    grid-template-columns:minmax(0,1fr) minmax(310px,420px);
-    gap:34px;
+
+  .saga-runner{
+
+    animation:none;
+
+    display:none;
+
   }
 
-  .hero h1{
-    font-size:clamp(3.3rem,5.5vw,5.3rem);
+
+  .book-card,
+  .btn,
+  .volume,
+  .res-card{
+
+    transition:none;
+
   }
 
-  .book-wrap{
-    max-width:420px;
-  }
-}
-
-@media(max-width:900px){
-
-  .hero > .container{
-    padding-left:28px;
-    padding-right:28px;
-  }
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-copy{
-    max-width:760px;
-  }
-
-  .book-wrap{
-    margin-left:auto;
-    margin-right:auto;
-    max-width:470px;
-  }
-}
-
-@media(max-width:650px){
-
-  .hero > .container{
-    padding-left:20px;
-    padding-right:20px;
-  }
-
-  .hero h1{
-    font-size:clamp(2.8rem,14vw,4.2rem);
-    letter-spacing:.02em;
-  }
-
-  .hero h2{
-    letter-spacing:.07em;
-  }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
 <header class="nav">
 
   <div class="container nav-inner">
 
-    <a class="brand" href="#top">
+    <a
+      class="brand"
+      href="#top"
+    >
+
       SYNAERIS
-      <small>Daniel Donauer</small>
+
+      <small>
+        Daniel Donauer
+      </small>
+
     </a>
 
-    <nav class="nav-links" aria-label="Hauptnavigation">
 
-      <a href="#welt">Die Welt</a>
+    <nav
+      class="nav-links"
+      aria-label="Hauptnavigation"
+    >
 
-      <a href="#saga">5 Bände</a>
+      <a href="#welt">
+        Die Welt
+      </a>
 
-      <a href="#autor">Autor</a>
+      <a href="#saga">
+        5 Bände
+      </a>
 
-      <a class="nav-cta" href="#kontakt">
+      <a href="#autor">
+        Autor
+      </a>
+
+      <a
+        class="nav-cta"
+        href="#kontakt"
+      >
         Kontakt
       </a>
 
@@ -1238,6 +2670,7 @@ body{
   </div>
 
 </header>
+
 
 
 <main id="top">
@@ -1251,29 +2684,39 @@ body{
 
   <div class="container hero-grid">
 
+
     <div class="hero-copy">
+
 
       <div class="eyebrow">
         Eine neue High-Fantasy-Saga
       </div>
 
+
       <div class="ornament">
         <span>✦</span>
       </div>
+
 
       <h1>
         SYNAERIS
       </h1>
 
+
       <h2>
         Band I · Wo Regen verschlingt
       </h2>
 
+
       <p>
+
         Eine Welt, deren Geschichte auf einer Lüge beruht.
-        Ein junger Mann, dessen Verbindung zur Resonanz das Schicksal
-        eines ganzen Reiches verändern könnte.
+
+        Ein junger Mann, dessen Verbindung zur Resonanz
+        das Schicksal eines ganzen Reiches verändern könnte.
+
       </p>
+
 
       <div class="hero-actions">
 
@@ -1284,6 +2727,7 @@ body{
           In die Welt eintauchen
         </a>
 
+
         <a
           class="btn btn-secondary"
           href="#saga"
@@ -1293,18 +2737,26 @@ body{
 
       </div>
 
+
       <div class="series-note">
 
+
         <div class="series-dots">
+
           <i></i>
           <i></i>
           <i></i>
           <i></i>
           <i></i>
+
         </div>
 
+
         <span>
-          Band I einer vollständig geschriebenen fünfteiligen Fantasy-Saga
+
+          Band I einer vollständig geschriebenen
+          fünfteiligen Fantasy-Saga
+
         </span>
 
       </div>
@@ -1312,9 +2764,12 @@ body{
     </div>
 
 
+
     <div class="book-wrap">
 
+
       <div class="book-glow"></div>
+
 
       <figure class="book-card">
 
@@ -1324,7 +2779,9 @@ body{
         >
 
         <figcaption class="book-caption">
+
           BAND I · DANIEL DONAUER
+
         </figcaption>
 
       </figure>
@@ -1348,33 +2805,47 @@ body{
 
   <div class="container">
 
+
     <div class="section-head">
 
       <div class="eyebrow">
         Wo Regen verschlingt
       </div>
 
+
       <h3>
+
         Manche Wahrheiten werden nicht vergessen.
+
         Sie werden verborgen.
+
       </h3>
 
+
       <p>
-        SYNAERIS verbindet episches Worldbuilding mit einer
-        charaktergetriebenen Geschichte über Freundschaft,
-        Familie, Erinnerung und die Kraft menschlicher Verbindung.
+
+        SYNAERIS verbindet episches Worldbuilding
+        mit einer charaktergetriebenen Geschichte
+        über Freundschaft, Familie, Erinnerung
+        und die Kraft menschlicher Verbindung.
+
       </p>
 
     </div>
 
 
+
     <div class="story-grid">
+
 
       <aside class="quote-card">
 
         <blockquote>
-          „Schon bald erkennt Pareh, dass die Geschichte Synaeris
+
+          „Schon bald erkennt Pareh,
+          dass die Geschichte Synaeris
           auf einer Lüge beruht.“
+
         </blockquote>
 
         <cite>
@@ -1384,53 +2855,91 @@ body{
       </aside>
 
 
+
       <div class="story-copy">
 
         <p>
-          Pareh führt ein unscheinbares Leben in der verregneten
-          Hafenstadt Nareth. Obwohl er Resonanzkräfte besitzt,
-          gehört er keiner der sechs Resonanzen an – ein Rätsel,
-          das selbst die Gelehrten von Solaris nicht erklären können.
+
+          Pareh führt ein unscheinbares Leben
+          in der verregneten Hafenstadt Nareth.
+
+          Obwohl er Resonanzkräfte besitzt,
+          gehört er keiner der sechs Resonanzen an –
+          ein Rätsel, das selbst die Gelehrten
+          von Solaris nicht erklären können.
+
         </p>
 
+
         <p>
-          Als geheimnisvolle Fremde auftauchen und uralte Mächte
-          auf ihn aufmerksam werden, gerät Pareh in einen Konflikt,
+
+          Als geheimnisvolle Fremde auftauchen
+          und uralte Mächte auf ihn aufmerksam werden,
+          gerät Pareh in einen Konflikt,
           der weit über seine eigene Herkunft hinausreicht.
-          Gemeinsam mit der entschlossenen Yana und unerwarteten
-          Verbündeten beginnt eine Reise durch zerrissene Reiche
+
+          Gemeinsam mit der entschlossenen Yana
+          und unerwarteten Verbündeten beginnt eine Reise
+          durch zerrissene Reiche
           und längst vergessene Wahrheiten.
+
         </p>
 
+
         <p>
-          Doch je näher Pareh der Wahrheit kommt, desto deutlicher
-          wird: Nicht nur seine Vergangenheit steht auf dem Spiel.
-          Seine ungewöhnliche Verbindung zur Resonanz könnte über
-          das Schicksal einer ganzen Welt entscheiden.
+
+          Doch je näher Pareh der Wahrheit kommt,
+          desto deutlicher wird:
+
+          Nicht nur seine Vergangenheit steht auf dem Spiel.
+
+          Seine ungewöhnliche Verbindung zur Resonanz
+          könnte über das Schicksal
+          einer ganzen Welt entscheiden.
+
         </p>
+
 
 
         <div class="feature-row">
 
+
           <div class="feature">
-            <strong>WELT</strong>
+
+            <strong>
+              WELT
+            </strong>
+
             <span>
               Eigenständige Mythologie & Reiche
             </span>
+
           </div>
 
+
           <div class="feature">
-            <strong>MAGIE</strong>
+
+            <strong>
+              MAGIE
+            </strong>
+
             <span>
               Außergewöhnliches Resonanzsystem
             </span>
+
           </div>
 
+
           <div class="feature">
-            <strong>FIGUREN</strong>
+
+            <strong>
+              FIGUREN
+            </strong>
+
             <span>
               Charaktergetriebene Erzählweise
             </span>
+
           </div>
 
         </div>
@@ -1453,26 +2962,35 @@ body{
 
   <div class="container">
 
+
     <div class="section-head">
 
       <div class="eyebrow">
         Das Herz der Welt
       </div>
 
+
       <h3>
         Resonanz ist mehr als Magie.
       </h3>
 
+
       <p>
+
         Sie ist Verbindung, Erinnerung und Macht.
-        In Synaeris prägt sie Menschen, Reiche und das Verständnis
-        dessen, was überhaupt als Wahrheit gelten darf.
+
+        In Synaeris prägt sie Menschen,
+        Reiche und das Verständnis dessen,
+        was überhaupt als Wahrheit gelten darf.
+
       </p>
 
     </div>
 
 
+
     <div class="res-grid">
+
 
       <article class="res-card">
 
@@ -1485,11 +3003,15 @@ body{
         </h4>
 
         <p>
+
           Die stärksten Kräfte dieser Welt entstehen dort,
-          wo Menschen, Erinnerungen und Schicksale aufeinandertreffen.
+          wo Menschen, Erinnerungen und Schicksale
+          aufeinandertreffen.
+
         </p>
 
       </article>
+
 
 
       <article class="res-card">
@@ -1503,12 +3025,16 @@ body{
         </h4>
 
         <p>
+
           Was geschah wirklich?
+
           Und was wurde nur oft genug erzählt,
           bis es zur Geschichte wurde?
+
         </p>
 
       </article>
+
 
 
       <article class="res-card">
@@ -1522,9 +3048,11 @@ body{
         </h4>
 
         <p>
+
           Je tiefer Pareh in die Vergangenheit blickt,
           desto gefährlicher wird die Frage,
           wem die Wahrheit nützt.
+
         </p>
 
       </article>
@@ -1548,32 +3076,59 @@ body{
 
   <div class="container">
 
+
     <div class="section-head">
 
       <div class="eyebrow">
         Die Saga
       </div>
 
+
       <h3>
+
         Fünf Bände.
         Eine Welt.
         Eine Wahrheit.
+
       </h3>
 
+
       <p>
-        Die Geschichte von SYNAERIS ist bereits vollständig erzählt:
+
+        Die Geschichte von SYNAERIS
+        ist bereits vollständig erzählt:
+
         Alle fünf Bände der Saga sind geschrieben.
-        Band I eröffnet die Reise, während die weiteren Teile
-        nach und nach veröffentlicht werden und die Welt von Synaeris
+
+        Band I eröffnet die Reise,
+        während die weiteren Teile
+        nach und nach veröffentlicht werden
+        und die Welt von Synaeris
         immer weiter entfalten.
+
       </p>
 
     </div>
 
 
-    <div class="timeline">
 
-      <article class="volume active">
+    <div
+      class="timeline"
+      id="sagaTimeline"
+    >
+
+
+      <div
+        class="saga-runner"
+        aria-hidden="true"
+      ></div>
+
+
+
+      <article
+        class="volume active"
+        data-volume="0"
+      >
 
         <b>
           BAND I
@@ -1590,7 +3145,11 @@ body{
       </article>
 
 
-      <article class="volume">
+
+      <article
+        class="volume"
+        data-volume="1"
+      >
 
         <b>
           BAND II
@@ -1607,7 +3166,11 @@ body{
       </article>
 
 
-      <article class="volume">
+
+      <article
+        class="volume"
+        data-volume="2"
+      >
 
         <b>
           BAND III
@@ -1624,7 +3187,11 @@ body{
       </article>
 
 
-      <article class="volume">
+
+      <article
+        class="volume"
+        data-volume="3"
+      >
 
         <b>
           BAND IV
@@ -1641,14 +3208,20 @@ body{
       </article>
 
 
-      <article class="volume">
+
+      <article
+        class="volume"
+        data-volume="4"
+      >
 
         <b>
           BAND V
         </b>
 
         <h4>
-          Das Herz der Welt (Finale)
+          Das Herz der Welt
+          <br>
+          (Finale)
         </h4>
 
         <p>
@@ -1673,7 +3246,9 @@ body{
 
   <div class="container author-grid">
 
+
     <div class="author-photo">
+
 
       <div class="fallback">
 
@@ -1689,6 +3264,7 @@ body{
 
       </div>
 
+
       <img
         src="donnie.png"
         alt="Daniel Donauer"
@@ -1698,31 +3274,49 @@ body{
     </div>
 
 
+
     <div class="author-copy">
 
       <div class="eyebrow">
         Der Autor
       </div>
 
+
       <h3>
         Daniel Donauer
       </h3>
 
-      <p>
-        Mit SYNAERIS erschafft Daniel Donauer eine eigenständige
-        High-Fantasy-Welt, in der große Konflikte und Mythologie
-        immer mit persönlichen Entscheidungen, Beziehungen und
-        der Suche nach Wahrheit verbunden bleiben.
-      </p>
 
       <p>
-        Die gesamte Geschichte ist als fünfteilige Saga bereits
-        vollständig geschrieben. Band I –
-        <em>Wo Regen verschlingt</em> – bildet den Auftakt.
-        Die weiteren Bände erscheinen nach und nach und führen
-        die Geschichte konsequent bis zu ihrem bereits geschriebenen
-        Finale weiter.
+
+        Mit SYNAERIS erschafft Daniel Donauer
+        eine eigenständige High-Fantasy-Welt,
+        in der große Konflikte und Mythologie
+        immer mit persönlichen Entscheidungen,
+        Beziehungen und der Suche nach Wahrheit
+        verbunden bleiben.
+
       </p>
+
+
+      <p>
+
+        Die gesamte Geschichte ist
+        als fünfteilige Saga
+        bereits vollständig geschrieben.
+
+        Band I –
+        <em>Wo Regen verschlingt</em> –
+        bildet den Auftakt.
+
+        Die weiteren Bände erscheinen
+        nach und nach und führen
+        die Geschichte konsequent
+        bis zu ihrem bereits geschriebenen
+        Finale weiter.
+
+      </p>
+
 
       <div class="ornament">
         <span>✦</span>
@@ -1756,20 +3350,30 @@ body{
           Kontakt
         </div>
 
+
         <h3>
           Eine Nachricht aus deiner Welt.
         </h3>
 
+
         <p>
-          Fragen zu SYNAERIS, Presseanfragen, Kooperationen,
-          Lesungen oder Interesse an kommenden Veröffentlichungen?
+
+          Fragen zu SYNAERIS,
+          Presseanfragen,
+          Kooperationen,
+          Lesungen
+          oder Interesse an kommenden Veröffentlichungen?
+
           Schreib uns direkt über das Formular.
+
         </p>
 
 
         <div class="contact-meta">
 
-          <strong style="color:#cdb288">
+          <strong
+            style="color:#cdb288"
+          >
             SYNAERIS
           </strong>
 
@@ -1781,31 +3385,15 @@ body{
 
           Autor: Daniel Donauer
 
-          <br>
-
-       
-
-          <a
-            class="contact-mail"
-            href="mailto:admin@synaeris.ch"
-          >
-            
-          </a>
-
         </div>
 
       </div>
 
 
 
-      <!--
-        FORMULARVERSAND ÜBER FORMSUBMIT
-
-        Beim allerersten Versand sendet FormSubmit
-        eine Aktivierungs-Mail an admin@synaeris.ch.
-
-        Diese einmal bestätigen.
-      -->
+      <!-- ===================================================
+           KONTAKTFORMULAR
+           =================================================== -->
 
       <form
         class="form"
@@ -1815,13 +3403,12 @@ body{
       >
 
 
-        <!-- FormSubmit Einstellungen -->
-
         <input
           type="hidden"
           name="_subject"
           value="Neue Anfrage über synaeris.ch"
         >
+
 
         <input
           type="hidden"
@@ -1829,17 +3416,20 @@ body{
           value="table"
         >
 
+
         <input
           type="hidden"
           name="_captcha"
           value="true"
         >
 
+
         <input
           type="hidden"
           name="_next"
           value="https://synaeris.ch/#kontakt"
         >
+
 
 
         <div class="form-grid">
@@ -1887,29 +3477,44 @@ body{
               ANLIEGEN
             </label>
 
+
             <select
               id="topic"
               name="Anliegen"
               required
             >
 
-              <option value="Allgemeine Anfrage">
+              <option
+                value="Allgemeine Anfrage"
+              >
                 Allgemeine Anfrage
               </option>
 
-              <option value="Presse / Interview">
+
+              <option
+                value="Presse / Interview"
+              >
                 Presse / Interview
               </option>
 
-              <option value="Lesung / Veranstaltung">
+
+              <option
+                value="Lesung / Veranstaltung"
+              >
                 Lesung / Veranstaltung
               </option>
 
-              <option value="Kooperation">
+
+              <option
+                value="Kooperation"
+              >
                 Kooperation
               </option>
 
-              <option value="Informationen zur Buchreihe">
+
+              <option
+                value="Informationen zur Buchreihe"
+              >
                 Informationen zur Buchreihe
               </option>
 
@@ -1925,6 +3530,7 @@ body{
               NACHRICHT
             </label>
 
+
             <textarea
               id="message"
               name="Nachricht"
@@ -1937,8 +3543,11 @@ body{
 
 
           <div class="form-note">
-            Deine Nachricht wird direkt an die
-            admin@synaeris.ch übermittelt.
+
+            Deine Nachricht wird
+            direkt an das
+            SYNAERIS-Team übermittelt.
+
           </div>
 
 
@@ -1954,11 +3563,9 @@ body{
 
           </div>
 
-
         </div>
 
       </form>
-
 
     </div>
 
@@ -1980,12 +3587,19 @@ body{
   <div class="container footer-inner">
 
     <div class="footer-brand">
+
       SYNAERIS · DANIEL DONAUER
+
     </div>
 
+
     <div>
-      © <span id="year"></span>
+
+      ©
+      <span id="year"></span>
+
       · Alle Rechte vorbehalten
+
     </div>
 
   </div>
@@ -1994,12 +3608,93 @@ body{
 
 
 
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
 <script>
+
+/*
+  Copyright-Jahr
+*/
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
+
+
+/*
+  Dezente Saga-Hervorhebung.
+
+  Der CSS-Lichtpunkt fährt unabhängig darüber.
+  JavaScript hebt gleichzeitig Band I → V hervor.
+*/
+
+const sagaVolumes =
+  document.querySelectorAll(
+    ".timeline .volume"
+  );
+
+
+let sagaIndex = 0;
+
+
+/*
+  Erstes Band hervorheben
+*/
+
+function highlightSagaVolume(){
+
+  sagaVolumes.forEach(
+    function(volume){
+
+      volume.classList.remove(
+        "saga-highlight"
+      );
+
+    }
+  );
+
+
+  if(
+    window.innerWidth > 900 &&
+    sagaVolumes.length
+  ){
+
+    sagaVolumes[
+      sagaIndex
+    ].classList.add(
+      "saga-highlight"
+    );
+
+  }
+
+
+  sagaIndex =
+    (
+      sagaIndex + 1
+    )
+    %
+    sagaVolumes.length;
+
+}
+
+
+/*
+  ungefähr passend zur
+  10-Sekunden-Lichtanimation
+*/
+
+highlightSagaVolume();
+
+setInterval(
+  highlightSagaVolume,
+  2000
+);
+
+
 </script>
+
 
 </body>
 </html>
