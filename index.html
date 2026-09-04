@@ -1829,6 +1829,194 @@ section{
 
 
 /* =========================================================
+   WELTKARTE
+   ========================================================= */
+
+.world-map{
+  background:
+    linear-gradient(
+      180deg,
+      #07171e,
+      #06131a
+    );
+}
+
+.map-shell{
+  max-width:980px;
+  margin:0 auto;
+}
+
+.map-preview{
+  position:relative;
+  overflow:hidden;
+  border:
+    1px solid
+    rgba(215,170,104,.26);
+  background:#041016;
+  box-shadow:var(--shadow);
+  cursor:zoom-in;
+}
+
+.map-preview::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:
+    inset 0 0 0 1px rgba(240,201,134,.08),
+    inset 0 0 80px rgba(0,0,0,.32);
+}
+
+.map-preview img{
+  width:100%;
+  height:auto;
+  max-height:520px;
+  object-fit:cover;
+  object-position:center;
+  transition:
+    transform .55s ease,
+    filter .55s ease;
+}
+
+.map-preview:hover img{
+  transform:scale(1.018);
+  filter:brightness(1.05);
+}
+
+.map-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:
+    22px 24px;
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(3,12,17,.92)
+    );
+}
+
+.map-overlay span{
+  font-family:Cinzel,serif;
+  font-size:.72rem;
+  letter-spacing:.11em;
+  color:var(--gold2);
+  text-transform:uppercase;
+}
+
+.map-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:22px;
+}
+
+.map-hint{
+  margin-top:14px;
+  text-align:center;
+  color:#8f9999;
+  font-size:.95rem;
+}
+
+.map-modal{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  background:rgba(1,7,10,.94);
+  backdrop-filter:blur(12px);
+}
+
+.map-modal.open{
+  display:flex;
+}
+
+.map-modal-inner{
+  position:relative;
+  width:min(1500px,96vw);
+  max-height:92vh;
+  overflow:auto;
+  border:
+    1px solid
+    rgba(215,170,104,.34);
+  background:#031017;
+  box-shadow:
+    0 35px 100px
+    rgba(0,0,0,.7);
+}
+
+.map-modal-inner img{
+  width:100%;
+  height:auto;
+}
+
+.map-close{
+  position:fixed;
+  top:24px;
+  right:26px;
+  z-index:210;
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border:
+    1px solid
+    rgba(215,170,104,.50);
+  border-radius:50%;
+  background:rgba(4,15,20,.92);
+  color:var(--gold2);
+  font-family:Cinzel,serif;
+  font-size:1.3rem;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.map-close:hover{
+  transform:scale(1.06);
+  background:rgba(215,170,104,.10);
+}
+
+body.map-open{
+  overflow:hidden;
+}
+
+@media(max-width:650px){
+
+  .map-overlay{
+    padding:
+      16px 18px;
+  }
+
+  .map-overlay span{
+    font-size:.62rem;
+  }
+
+  .map-modal{
+    padding:12px;
+  }
+
+  .map-close{
+    top:14px;
+    right:14px;
+    width:42px;
+    height:42px;
+  }
+
+}
+
+
+/* =========================================================
    AUTOR
    ========================================================= */
 
@@ -2964,6 +3152,83 @@ footer{
 
 
 <!-- =========================================================
+     WELTKARTE
+     ========================================================= -->
+
+<section class="world-map" id="weltkarte">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Die Welt von Synaeris
+      </div>
+
+      <h3>
+        Eine Welt, viele Reiche.
+      </h3>
+
+      <p>
+        Entdecke die Weltkarte von SYNAERIS und wirf einen Blick
+        auf die Reiche, Meere, Städte und Orte der Saga.
+      </p>
+
+    </div>
+
+
+    <div class="map-shell">
+
+      <div
+        class="map-preview"
+        id="mapPreview"
+        role="button"
+        tabindex="0"
+        aria-label="Weltkarte von Synaeris vergrößern"
+      >
+
+        <img
+          src="maps.png"
+          alt="Weltkarte von Synaeris"
+        >
+
+        <div class="map-overlay">
+          <span>
+            Klicken zum Vergrößern
+          </span>
+
+          <span>
+            ✦ Weltkarte
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="map-actions">
+
+        <button
+          class="btn btn-secondary"
+          type="button"
+          id="openMapButton"
+        >
+          Karte vergrößern
+        </button>
+
+      </div>
+
+      <div class="map-hint">
+        Klicke auf die Karte, um sie vergrößert zu betrachten.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
      RESONANZ
      ========================================================= -->
 
@@ -3588,6 +3853,39 @@ footer{
 
 
 <!-- =========================================================
+     WELTKARTE LIGHTBOX
+     ========================================================= -->
+
+<div
+  class="map-modal"
+  id="mapModal"
+  aria-hidden="true"
+  role="dialog"
+  aria-label="Vergrößerte Weltkarte von Synaeris"
+>
+
+  <button
+    class="map-close"
+    id="mapClose"
+    type="button"
+    aria-label="Weltkarte schließen"
+  >
+    ×
+  </button>
+
+  <div class="map-modal-inner">
+
+    <img
+      src="maps.png"
+      alt="Vergrößerte Weltkarte von Synaeris"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
      FOOTER
      ========================================================= -->
 
@@ -3699,6 +3997,125 @@ highlightSagaVolume();
 setInterval(
   highlightSagaVolume,
   2000
+);
+
+
+/*
+  Weltkarte öffnen / schließen
+*/
+
+const mapModal =
+  document.getElementById("mapModal");
+
+const mapPreview =
+  document.getElementById("mapPreview");
+
+const openMapButton =
+  document.getElementById("openMapButton");
+
+const mapClose =
+  document.getElementById("mapClose");
+
+
+function openMap(){
+
+  mapModal.classList.add("open");
+
+  mapModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.classList.add(
+    "map-open"
+  );
+
+}
+
+
+function closeMap(){
+
+  mapModal.classList.remove("open");
+
+  mapModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.classList.remove(
+    "map-open"
+  );
+
+}
+
+
+mapPreview.addEventListener(
+  "click",
+  openMap
+);
+
+
+mapPreview.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.key === "Enter" ||
+      event.key === " "
+    ){
+
+      event.preventDefault();
+
+      openMap();
+
+    }
+
+  }
+);
+
+
+openMapButton.addEventListener(
+  "click",
+  openMap
+);
+
+
+mapClose.addEventListener(
+  "click",
+  closeMap
+);
+
+
+mapModal.addEventListener(
+  "click",
+  function(event){
+
+    if(
+      event.target === mapModal
+    ){
+
+      closeMap();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.key === "Escape" &&
+      mapModal.classList.contains("open")
+    ){
+
+      closeMap();
+
+    }
+
+  }
 );
 
 
